@@ -1,0 +1,16 @@
+{
+  "name": "sass-project",
+  "version": "1.0.0",
+  "description": "this is project with sass",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch scss -o css"
+  },
+  "author": "memo figueredo",
+  "license": "ISC",
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "node-sass": "^4.14.1"
+  }
+}
