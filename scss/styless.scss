@@ -181,274 +181,497 @@
 // }
 
 // Colors
-$background-color: #ffffff;
-$color-primary-light: #232c5e;
-$color-primary-dark: #1e0b36;
-$color-black: #000;
-$color-gray-dark: #aaa;
-$color-gray-light: #eee;
-$color-white: #fff;
+// $background-color: #ffffff;
+// $color-primary-light: #232c5e;
+// $color-primary-dark: #1e0b36;
+// $color-black: #000;
+// $color-gray-dark: #aaa;
+// $color-gray-light: #eee;
+// $color-white: #fff;
 
-// Mixins
-@mixin absCenter {
- position: absolute;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
+// // Mixins
+// @mixin absCenter {
+//  position: absolute;
+//  top: 50%;
+//  left: 50%;
+//  transform: translate(-50%, -50%);
+// }
+
+// @mixin flexCenter {
+//  flex-flow: row;
+//  align-items: center;
+//  justify-content: center;
+// }
+
+// @mixin respond($breakpoint) {
+//  @if $breakpoint == phone {
+//   @media (max-width: 37.5em) {
+//    @content;
+//   } // < 600px
+//  }
+//  @if $breakpoint == tab-port {
+//   @media (max-width: 56.25em) {
+//    @content;
+//   } // < 900px
+//  }
+//  @if $breakpoint == tab-land {
+//   @media (max-width: 75em) {
+//    @content;
+//   } // < 1200px
+//  }
+//  @if $breakpoint == big-desktop {
+//   @media (min-width: 112.5em) {
+//    @content;
+//   } // > 1800px
+//  }
+// }
+
+// /* Resetear */
+// *,
+// *::after,
+// *::before {
+//  margin: 0;
+//  padding: 0;
+//  box-sizing: border-box;
+// }
+
+// //media querys
+// html {
+//  // 10px as 1rem.
+//  font-size: 62.5%;
+
+//  @include respond(tab-land) {
+//   // width < 1200?
+//   font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25
+//  }
+//  @include respond(tab-port) {
+//   // width < 900?
+//   font-size: 50%; // 1rem = 8px, 8/16 = 50
+//  }
+//  @include respond(big-desktop) {
+//   font-size: 75%; // 1 rem = 12px, 12/16 = 75
+//  }
+// }
+
+// body {
+//  height: 100vh;
+//  background-color: $background-color;
+// }
+
+// .artboard {
+//  display: flex;
+//  @include flexCenter;
+//  padding: 4rem;
+//  height: 100%;
+//  position: relative;
+
+//  @include respond(phone) {
+//   padding: 1rem;
+//  }
+// }
+
+// .card {
+//  flex: initial;
+//  position: relative;
+//  height: 52rem;
+//  width: 48rem;
+//  -moz-perspective: 200rem;
+//  perspective: 200rem;
+//  margin: 2rem;
+
+//  &__side {
+//   height: 52rem;
+//   transition: all 0.8s ease;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   -webkit-backface-visibility: hidden;
+//   /* No queremos ver la parte trasera del elemento.*/
+//   backface-visibility: hidden;
+//   /* No queremos ver la parte trasera del elemento. */
+//   border-radius: 3px;
+//   overflow: hidden; /* La imagen desborda al padre. */
+//   box-shadow: 0 2rem 6rem rgba($color-black, 0.15);
+
+//   &--front {
+//    background-image: linear-gradient(
+//      to right bottom,
+//      rgba($color-primary-dark, 0.65),
+//      rgba($color-primary-light, 0.7)
+//     ),
+//     url(https://cdn.pixabay.com/photo/2016/07/01/09/05/space-1490668_1280.png);
+//   }
+
+//   &--back {
+//    background-color: $color-white;
+//    transform: rotateY(180deg);
+//   }
+//  }
+
+//  &:hover &__side--back {
+//   transform: rotateY(0);
+//  }
+//  &:hover &__side--front {
+//   transform: rotateY(-180deg);
+//  }
+
+// Anverso de la card
+//  &__theme {
+//   @include absCenter;
+//   top: 54%;
+//   width: 90%;
+//   text-align: center;
+//  }
+
+//  &__theme-box {
+//   color: $color-white;
+//   margin-bottom: 8rem;
+//  }
+
+//  &__subject {
+//   font-family: "Inconsolata", monospace;
+//   letter-spacing: 0.8rem;
+//   font-size: 1.6rem;
+//   text-transform: uppercase;
+//   margin-bottom: 1rem;
+//  }
+
+//  &__title {
+//   font-family: "VT323", monospace;
+//   text-transform: uppercase;
+//   font-size: 6rem;
+//   font-weight: 100;
+//  }
+
+// Reverso de la card
+//  &__cover {
+//   position: relative;
+//   background-size: cover;
+//   height: 14rem;
+
+// modo de mezcla de fondo: pantalla;
+//   -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+//   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+//   border-top-left-radius: 3px;
+//   border-top-right-radius: 3px;
+//   background-image: linear-gradient(
+//     to top right,
+//     rgba($color-primary-dark, 0.65),
+//     rgba($color-primary-light, 0.65)
+//    ),
+//    url(https://cdn.pixabay.com/photo/2016/07/01/09/05/space-1490668_1280.png);
+//  }
+
+//  &__heading {
+//   text-align: center;
+//   color: $color-white;
+//   @include absCenter;
+//   width: 75%;
+//  }
+
+//  &__heading-span {
+//   font-family: "VT323", monospace;
+//   font-size: 4.2rem;
+//   font-weight: 300;
+//   text-transform: uppercase;
+//   padding: 1rem 1.5rem;
+//   color: $color-white;
+//  }
+
+//  &__details {
+//   font-family: "Inconsolata", monospace;
+//   padding: 4rem 2rem;
+//   ul {
+//    list-style: none;
+//    width: 80%;
+//    margin: 0 auto;
+
+//    li {
+//     text-align: center;
+//     font-size: 1.8rem;
+//     padding: 1rem;
+
+//     &:not(:last-child) {
+//      border-bottom: 1px solid $color-gray-light;
+//     }
+//    }
+//   }
+//  }
+
+// Responsive
+//  @media only screen and (max-width: 37.5em), only screen and (hover: none) {
+//   height: auto;
+//   border-radius: 3px;
+//   background-color: $color-white;
+//   box-shadow: 0 2rem 6rem rgba($color-black, 0.15);
+
+//   &__side {
+//    height: auto;
+//    position: relative;
+//    box-shadow: none;
+
+//    &--front {
+//     clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+//    }
+
+//    &--back {
+//     transform: rotateY(0);
+//    }
+//   }
+
+//   &:hover &__side--front {
+//    transform: rotateY(0);
+//   }
+
+//   &__details {
+//    padding: 3rem 2rem;
+//   }
+
+// // Estilo frontal
+//   &__theme {
+//    position: relative;
+//    top: 0;
+//    left: 0;
+//    transform: translate(0);
+//    width: 100%;
+//    padding: 5rem 4rem 1.5rem 4rem;
+//    text-align: right;
+//   }
+
+//   &__theme-box {
+//    margin-bottom: 1.5rem;
+//   }
+
+//   &__title {
+//    font-size: 4rem;
+//   }
+//  }
+// }
+
+/** 
+  Card parallax
+**/
+
+@import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
+
+//Declaramos los Id de la imagen los usaremos
+// mas adelante para poner las imagenes
+$imageIds: "1517021897933-0e0319cfbc28", 
+"1533903345306-15d1c30952de",
+  "1545243424-0ce743321e11", 
+  "1531306728370-e2ebd9d7bb99";
+
+// variables Globales
+$bp-md: 600px;
+$bp-lg: 800px;
+
+//animación y font
+:root {
+  --d: 700ms;
+  --e: cubic-bezier(0.19, 1, 0.22, 1);
+  --font-sans: "Rubik", sans-serif;
+  --font-serif: "Cardo", serif;
 }
 
-@mixin flexCenter {
- flex-flow: row;
- align-items: center;
- justify-content: center;
+* {
+  box-sizing: border-box;
 }
 
-@mixin respond($breakpoint) {
- @if $breakpoint == phone {
-  @media (max-width: 37.5em) {
-   @content;
-  } // < 600px
- }
- @if $breakpoint == tab-port {
-  @media (max-width: 56.25em) {
-   @content;
-  } // < 900px
- }
- @if $breakpoint == tab-land {
-  @media (max-width: 75em) {
-   @content;
-  } // < 1200px
- }
- @if $breakpoint == big-desktop {
-  @media (min-width: 112.5em) {
-   @content;
-  } // > 1800px
- }
-}
-
-/* Resetear */
-*,
-*::after,
-*::before {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
-}
-
-//media querys
-html {
- // 10px as 1rem.
- font-size: 62.5%;
-
- @include respond(tab-land) {
-  // width < 1200?
-  font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25
- }
- @include respond(tab-port) {
-  // width < 900?
-  font-size: 50%; // 1rem = 8px, 8/16 = 50
- }
- @include respond(big-desktop) {
-  font-size: 75%; // 1 rem = 12px, 12/16 = 75
- }
+html,
+body {
+  height: 100%;
 }
 
 body {
- height: 100vh;
- background-color: $background-color;
+  display: grid;
+  place-items: center;
 }
 
-.artboard {
- display: flex;
- @include flexCenter;
- padding: 4rem;
- height: 100%;
- position: relative;
-
- @include respond(phone) {
+//responsive
+.page-content {
+  display: grid;
+  grid-gap: 1rem;
   padding: 1rem;
- }
+  max-width: 1024px;
+  margin: 0 auto;
+  font-family: var(--font-sans);
+
+  @media (min-width: $bp-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $bp-lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .card {
- flex: initial;
- position: relative;
- height: 52rem;
- width: 48rem;
- -moz-perspective: 200rem;
- perspective: 200rem;
- margin: 2rem;
-
- &__side {
-  height: 52rem;
-  transition: all 0.8s ease;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  -webkit-backface-visibility: hidden; 
-  /* No queremos ver la parte trasera del elemento.*/
-  backface-visibility: hidden; 
-  /* No queremos ver la parte trasera del elemento. */
-  border-radius: 3px;
-  overflow: hidden; /* La imagen desborda al padre. */
-  box-shadow: 0 2rem 6rem rgba($color-black, 0.15);
-
-  &--front {
-   background-image: linear-gradient(
-     to right bottom,
-     rgba($color-primary-dark, 0.65),
-     rgba($color-primary-light, 0.7)
-    ),
-    url(https://cdn.pixabay.com/photo/2016/07/01/09/05/space-1490668_1280.png);
-  }
-
-  &--back {
-   background-color: $color-white;
-   transform: rotateY(180deg);
-  }
- }
-
- &:hover &__side--back {
-  transform: rotateY(0);
- }
- &:hover &__side--front {
-  transform: rotateY(-180deg);
- }
-
- 
-// Anverso de la card
- &__theme {
-  @include absCenter;
-  top: 54%;
-  width: 90%;
-  text-align: center;
- }
-
- &__theme-box {
-  color: $color-white;
-  margin-bottom: 8rem;
- }
-
- &__subject {
-  font-family: "Inconsolata", monospace;
-  letter-spacing: 0.8rem;
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
- }
-
- &__title {
-  font-family: "VT323", monospace;
-  text-transform: uppercase;
-  font-size: 6rem;
-  font-weight: 100;
- }
- 
-
-// Reverso de la card
- &__cover {
   position: relative;
-  background-size: cover;
-  height: 14rem;
- 
-// modo de mezcla de fondo: pantalla;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  background-image: linear-gradient(
-    to top right,
-    rgba($color-primary-dark, 0.65),
-    rgba($color-primary-light, 0.65)
-   ),
-   url(https://cdn.pixabay.com/photo/2016/07/01/09/05/space-1490668_1280.png);
- }
-
- &__heading {
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 1rem;
+  width: 100%;
   text-align: center;
-  color: $color-white;
-  @include absCenter;
-  width: 75%;
- }
+  color: whitesmoke;
+  background-color: whitesmoke;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
+    0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1),
+    0 16px 16px rgba(0, 0, 0, 0.1);
 
- &__heading-span {
-  font-family: "VT323", monospace;
-  font-size: 4.2rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  padding: 1rem 1.5rem;
-  color: $color-white;
- }
+  @media (min-width: $bp-md) {
+    height: 350px;
+  }
 
- &__details {
-  font-family: "Inconsolata", monospace;
-  padding: 4rem 2rem;
-  ul {
-   list-style: none;
-   width: 80%;
-   margin: 0 auto;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    background-size: cover;
+    background-position: 0 0;
+    transition: transform calc(var(--d) * 1.5) var(--e);
+    pointer-events: none;
+  }
 
-   li {
-    text-align: center;
-    font-size: 1.8rem;
-    padding: 1rem;
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    pointer-events: none;
+    background-image: linear-gradient(
+      to bottom,
+      hsla(0, 0%, 0%, 0) 0%,
+      hsla(0, 0%, 0%, 0.009) 11.7%,
+      hsla(0, 0%, 0%, 0.034) 22.1%,
+      hsla(0, 0%, 0%, 0.072) 31.2%,
+      hsla(0, 0%, 0%, 0.123) 39.4%,
+      hsla(0, 0%, 0%, 0.182) 46.6%,
+      hsla(0, 0%, 0%, 0.249) 53.1%,
+      hsla(0, 0%, 0%, 0.32) 58.9%,
+      hsla(0, 0%, 0%, 0.394) 64.3%,
+      hsla(0, 0%, 0%, 0.468) 69.3%,
+      hsla(0, 0%, 0%, 0.54) 74.1%,
+      hsla(0, 0%, 0%, 0.607) 78.8%,
+      hsla(0, 0%, 0%, 0.668) 83.6%,
+      hsla(0, 0%, 0%, 0.721) 88.7%,
+      hsla(0, 0%, 0%, 0.762) 94.1%,
+      hsla(0, 0%, 0%, 0.79) 100%
+    );
+    transform: translateY(-50%);
+    transition: transform calc(var(--d) * 2) var(--e);
+  }
 
-    &:not(:last-child) {
-     border-bottom: 1px solid $color-gray-light;
+  @each $id in $imageIds {
+    $i: index($imageIds, $id);
+
+    &:nth-child(#{$i}):before {
+      background-image: url(
+  https://images.unsplash.com/photo-#{$id}?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
     }
-   }
   }
- }
-
- // Responsive
- @media only screen and (max-width: 37.5em), only screen and (hover: none) {
-  height: auto;
-  border-radius: 3px;
-  background-color: $color-white;
-  box-shadow: 0 2rem 6rem rgba($color-black, 0.15);
-
-  &__side {
-   height: auto;
-   position: relative;
-   box-shadow: none;
-
-   &--front {
-    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
-   }
-
-   &--back {
-    transform: rotateY(0);
-   }
-  }
-
-  &:hover &__side--front {
-   transform: rotateY(0);
-  }
-
-  &__details {
-   padding: 3rem 2rem;
-  }
-
-  
-// Estilo frontal 
-  &__theme {
-   position: relative;
-   top: 0;
-   left: 0;
-   transform: translate(0);
-   width: 100%;
-   padding: 5rem 4rem 1.5rem 4rem;
-   text-align: right;
-  }
-
-  &__theme-box {
-   margin-bottom: 1.5rem;
-  }
-
-  &__title {
-   font-size: 4rem;
-  }
- }
 }
 
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  transition: transform var(--d) var(--e);
+  z-index: 1;
+
+  > * + * {
+    margin-top: 1rem;
+  }
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.copy {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.btn {
+  cursor: pointer;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.65rem;
+  font-weight: bold;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  border: none;
+
+  &:hover {
+    background-color: lighten(black, 5%);
+  }
+
+  &:focus {
+    outline: 1px dashed yellow;
+    outline-offset: 3px;
+  }
+}
+
+@media (hover: hover) and (min-width: $bp-md) {
+  .card:after {
+    transform: translateY(0);
+  }
+
+  .content {
+    transform: translateY(calc(100% - 4.5rem));
+
+    > *:not(.title) {
+      opacity: 0;
+      transform: translateY(1rem);
+      transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+    }
+  }
+
+  .card:hover,
+  .card:focus-within {
+    align-items: center;
+
+    &:before {
+      transform: translateY(-4%);
+    }
+    &:after {
+      transform: translateY(-50%);
+    }
+
+    .content {
+      transform: translateY(0);
+
+      > *:not(.title) {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: calc(var(--d) / 8);
+      }
+    }
+  }
+
+  .card:focus-within {
+    &:before,
+    &:after,
+    .content,
+    .content > *:not(.title) {
+      transition-duration: 0s;
+    }
+  }
+}
