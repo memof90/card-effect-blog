@@ -826,6 +826,7 @@ overflow: hidden;
     transition: all 500ms;
     transition-delay: 80ms;
 }
+
 // pass color
 @function color($col) {
     @return map-get($colors, $col);
@@ -835,6 +836,7 @@ overflow: hidden;
 @function size($s) {
     @return map-get($sizes, $s )
 }
+
 html,body {
     background-color: color(bg);
     color: color(accent);
@@ -850,7 +852,6 @@ html,body {
 }
 
 #card {
-    
     border: 10px solid color(main);
     filter: drop-shadow(10px 10px 5px black);
     background-color: color(main);
@@ -907,7 +908,6 @@ html,body {
         margin-left: 400px;
     }
 }
-
 #content {
     * {
         margin: 5px;
