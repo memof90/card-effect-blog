@@ -1,110 +1,97 @@
 /** 
   Card parallax
 **/
-html, body {
-  background-color: #111122;
-  color: white;
-  font-family: 'Montserrat', sans-serif; }
+/* CARD MOVIE */
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+body {
+  font-family: Roboto, sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background-image: linear-gradient(to top, #ffffff 0%, #f5f5f5 100%); }
 
-#container {
-  margin: auto;
-  max-width: 500px;
-  width: calc(100vm - size(main));
-  padding: 0px; }
-
-#card {
-  border: 10px solid #ffffff;
-  filter: drop-shadow(10px 10px 5px black);
-  background-color: #ffffff;
-  border-radius: 10px;
-  margin: auto;
-  margin-top: 5em;
-  height: 100%;
-  max-height: 20em;
-  width: calc(10em - 30px);
-  padding: 0;
+.card {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.5);
+  max-width: 400px;
   display: flex;
-  justify-content: space-around;
-  border-radius: 5em;
-  overflow: hidden;
-  transition: all 500ms;
-  transition-delay: 80ms; }
-  #card:hover {
-    height: 10em;
-    width: 80%;
-    max-height: calc(8.1em);
-    background-color: #ffffff; }
-    #card:hover #face {
-      margin-left: -10px; }
-  #card :not(#face) {
-    opacity: 0; }
-  #card:hover :not(#face) {
-    transition: all 500ms;
-    transition-delay: 80ms;
-    opacity: 1; }
-  #card #face {
-    height: calc(10em - 30px);
-    width: calc(10em - 30px);
-    background-image: url("https://cutt.ly/7jOpyOZ");
-    background-size: 100%;
-    background-position: 0%, 20%;
-    border-radius: 100% !important;
-    margin-left: 0px;
-    transition: all 500ms;
-    transition-delay: 80ms;
-    z-index: 100; }
-  #card #content {
-    height: calc(10em - 30px);
-    width: calc(100% - (10em - 30px) - 30px); }
-  #card #lottie {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    margin-left: 400px; }
+  flex-direction: row;
+  border-radius: 25px;
+  position: relative; }
 
-#content * {
-  margin: 5px; }
+.card h2 {
+  margin: 0;
+  padding: 0 1rem; }
 
-#content #title {
-  font-size: 1.5em;
-  overflow: hidden;
-  white-space: nowrap;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color: black; }
+.card .title {
+  padding: 1rem;
+  text-align: right;
+  color: #052957;
+  font-weight: bold;
+  font-size: 12px; }
 
-#socialcontainer {
-  z-index: 0;
-  width: 100%; }
-  #socialcontainer #social {
-    margin: 0px;
-    overflow: hidden;
-    width: calc(1em + 10px);
-    white-space: nowrap;
-    transition: all 500ms;
-    transition-delay: 80ms; }
-    #socialcontainer #social:nth-child(1) {
-      margin-left: -1.884px; }
-    #socialcontainer #social:nth-child(2) {
-      margin-left: -7.536px; }
-    #socialcontainer #social:nth-child(3) {
-      margin-left: -16.956px; }
-    #socialcontainer #social:nth-child(4) {
-      margin-left: -30.144px; }
-    #socialcontainer #social a {
-      text-decoration: none; }
-      #socialcontainer #social a:visited {
-        color: #111122; }
-      #socialcontainer #social a .bxl-linkedin-square {
-        color: #0e76a8; }
-      #socialcontainer #social a .bxl-twitter {
-        color: #00acee; }
-      #socialcontainer #social a .bxl-facebook-square {
-        color: #3b5998; }
-      #socialcontainer #social a .bxl-github {
-        color: black; }
-  #socialcontainer #social:hover {
-    width: 100%; }
-  #socialcontainer #social i {
-    max-width: 3em;
-    margin: 0px;
-    margin-right: 5px; }
+.Subtitile {
+  color: #032d60; }
+
+.card .desc {
+  padding: 0.5rem 1rem;
+  font-size: 12px; }
+
+.card .actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  padding: 0.5rem 1rem; }
+
+.card img {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out; }
+
+.card img:hover {
+  transform: scale(1.1); }
+
+.img-avatar {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  border-radius: 50%;
+  border: 6px solid white;
+  top: 15px;
+  left: 85px; }
+
+.card-text {
+  display: grid;
+  grid-template-columns: 1fr 2fr; }
+
+.title-total {
+  padding: 2.5em 1.5em 1.5em 1.5em; }
+
+.portada {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-image: url("https://cutt.ly/MkvSQjn");
+  background-position: bottom center;
+  background-size: cover;
+  transition: transform 500ms; }
+
+.portada:hover {
+  transform: translateX(-35%); }
+
+button {
+  border: none;
+  background: none;
+  font-size: 24px;
+  color: #032d60;
+  cursor: pointer;
+  transition: 0.5s; }
+  button:hover {
+    color: #60f2fc;
+    transform: rotate(22deg); }
