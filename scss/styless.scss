@@ -1116,7 +1116,7 @@
 //   flex-direction: column;
 //   overflow: hidden;
 //   border-radius: 2rem;
-//   box-shadow: 0px 1rem 1.5rem 
+//   box-shadow: 0px 1rem 1.5rem
 //   rgba($color: #000000, $alpha: 0.5);
 // }
 
@@ -1134,11 +1134,11 @@
 //     background-color: white;
 //     width: $db-size;
 //     height: $db-size;
-//     box-shadow: 0 0.5rem 1rem 
+//     box-shadow: 0 0.5rem 1rem
 //     rgba($color: black, $alpha: 0.3);
 //     border-radius: 50%;
 //     transform: translateY(50%);
-//     transition: transform 200ms 
+//     transition: transform 200ms
 //     cubic-bezier(0.18, 0.89, 0.32, 1.28);
 //     &:hover {
 //       transform: translateY(50%) scale(1.3);
@@ -1270,63 +1270,169 @@
 
 /* Card Example */
 
-.cards-list {
-  z-index: 0;
-  width: 100%;
+// .cards-list {
+//   z-index: 0;
+//   width: 100%;
+//   display: flex;
+//   justify-content: space-around;
+//   flex-wrap: wrap;
+// }
+
+// .card {
+//   margin: 30px auto;
+//   width: 300px;
+//   height: 300px;
+//   border-radius: 40px;
+// box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+//   cursor: pointer;
+//   transition: 0.4s;
+// }
+
+// .card .card_image {
+//   width: inherit;
+//   height: inherit;
+//   border-radius: 40px;
+// }
+
+// .card .card_image img {
+//   width: inherit;
+//   height: inherit;
+//   border-radius: 40px;
+//   object-fit: cover;
+// }
+
+// .card .card_title {
+//   text-align: center;
+//   border-radius: 0px 0px 40px 40px;
+//   font-family: sans-serif;
+//   font-weight: bold;
+//   font-size: 30px;
+//   margin-top: -80px;
+//   height: 40px;
+// }
+// .card:hover {
+//   transform: scale(0.9, 0.9);
+//   box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+//     -5px -5px 30px 15px rgba(0,0,0,0.22);
+// }
+
+// .title-white {
+//   color: white;
+// }
+
+// .title-black {
+//   color: black;
+// }
+
+// @media all and (max-width: 500px) {
+//     .card-list {
+//     /* On small screens, we are no longer using row direction but column */
+//     flex-direction: column;
+//   }
+// }
+
+/* ASSETS CARD */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+$pri: #ffffff;
+$sec: #000000;
+$borTwitter: rgb(29, 161, 242);
+$borLink: #0077b5;
+$borGit: #670067;
+
+body {
+  margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Raleway", sans-serif;
 }
 
-.card {
-  margin: 30px auto;
-  width: 300px;
-  height: 300px;
-  border-radius: 40px;
-box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+.container {
+  width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 15px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.items {
+  border-radius: 5px;
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  grid-gap: 10px;
   cursor: pointer;
-  transition: 0.4s;
+  transition: all 0.6s;
 }
 
-.card .card_image {
-  width: inherit;
-  height: inherit;
-  border-radius: 40px;
+.icon-wrapper,
+.project-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.card .card_image img {
-  width: inherit;
-  height: inherit;
-  border-radius: 40px;
-  object-fit: cover;
+.icon-wrapper i {
+  font-size: 100px;
+  color: $sec;
+  transform: translateY(0px);
+  transition: all 0.6s;
 }
 
-.card .card_title {
-  text-align: center;
-  border-radius: 0px 0px 40px 40px;
-  font-family: sans-serif;
+.icon-wrapper {
+  align-self: end;
+}
+.project-name {
+  align-self: start;
+}
+
+.project-name p {
+  font-size: 24px;
   font-weight: bold;
-  font-size: 30px;
-  margin-top: -80px;
-  height: 40px;
-}
-.card:hover {
-  transform: scale(0.9, 0.9);
-  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
-    -5px -5px 30px 15px rgba(0,0,0,0.22);
+  letter-spacing: 2px;
+  color: $sec;
+  transform: translateY(0px);
+  transition: all 0.5s;
 }
 
-.title-white {
-  color: white;
-}
-
-.title-black {
-  color: black;
-}
-
-@media all and (max-width: 500px) {
-    .card-list {
-    /* On small screens, we are no longer using row direction but column */
-    flex-direction: column;
+.items:hover {
+  &.twitte {
+    & i {
+      color: $pri;
+    }
+    background-color: $borTwitter;
+  }
+  &.linke {
+    background-color: $borLink;
+    & i {
+      color: $pri;
+    }
+  }
+  &.githu {
+    background-color: $borGit;
+    & i {
+      color: $pri;
+    }
+  }
+  & .project-name p {
+    transform: translateY(-10px);
+    color: $pri;
+  }
+  & .icon-wrapper i {
+    transform: translateY(5px);
   }
 }
